@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const startBtn = document.getElementById('startBtn');
+  startBtn.addEventListener('click', createInputFields);
+});
+
 function createInputFields() {
   const count = parseInt(document.getElementById('wordCount').value);
   const inputDiv = document.getElementById('wordInputs');
