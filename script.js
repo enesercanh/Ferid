@@ -1,9 +1,35 @@
 const wordList = [
-  // Format: ["Azerbaijani", "English"]
   ["alma", "apple"],
-  ["kitab", "book"],
+  ["pişik", "cat"],
+  ["it", "dog"],
+  ["günəş", "sun"],
+  ["ay", "moon"],
+  ["ulduz", "star"],
   ["ev", "house"],
-  // Add your 28 more here...
+  ["məktəb", "school"],
+  ["kitab", "book"],
+  ["dost", "friend"],
+  ["su", "water"],
+  ["dondurma", "ice cream 🍦"],
+  ["top", "ball"],
+  ["rəng", "color"],
+  ["göy qurşağı", "rainbow 🌈"],
+  ["uşaq", "child"],
+  ["quş", "bird"],
+  ["fil", "elephant 🐘"],
+  ["meymun", "monkey 🐒"],
+  ["maşın", "car"],
+  ["qatar", "train 🚂"],
+  ["kukla", "doll"],
+  ["gül", "flower 🌸"],
+  ["ağac", "tree 🌳"],
+  ["çörək", "bread"],
+  ["süd", "milk"],
+  ["yumurta", "egg"],
+  ["şəkər", "candy"],
+  ["qələm", "pen"],
+  ["papaq", "hat"],
+  ["ayaqqabı", "shoes 👟"]
 ];
 
 const container = document.getElementById('flashcards-container');
