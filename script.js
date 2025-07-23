@@ -44,18 +44,22 @@ function generateFlashcards() {
     const en = pair.children[1].value.trim();
 
     if (az && en) {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.textContent = az;
-      card.dataset.en = en;
+      const flipCard = document.createElement('div');
+      flipCard.className = 'flip-card';
 
-      card.addEventListener('click', function () {
-        const tmp = this.textContent;
-        this.textContent = this.dataset.en;
-        this.dataset.en = tmp;
+      flipCard.innerHTML = `
+        <div class="flip-card-inner">
+          <div class="flip-card-front">${az}</div>
+          <div class="flip-card-back">${en}</div>
+        </div>
+      `;
+
+      // Touch support
+      flipCard.addEventListener('click', function () {
+        this.classList.toggle('flipped');
       });
 
-      flashcardDiv.appendChild(card);
+      flashcardDiv.appendChild(flipCard);
     }
   });
 }
