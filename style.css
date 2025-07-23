@@ -11,17 +11,20 @@ body {
 .container {
   max-width: 600px;
   width: 100%;
-  background: white;
+  background: #fff;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .ferid-photo {
   width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
+  border: 4px solid #ff90b3;
 }
 
 .setup input {
@@ -30,6 +33,8 @@ body {
   margin-top: 0.5rem;
   width: 60px;
   text-align: center;
+  border: 2px solid #ffdbe5;
+  border-radius: 8px;
 }
 
 button {
@@ -41,10 +46,12 @@ button {
   border-radius: 10px;
   cursor: pointer;
   margin: 1rem 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #ff6b95;
+  transform: translateY(-2px);
 }
 
 .word-pair {
@@ -58,6 +65,8 @@ button:hover {
   padding: 0.5rem;
   font-size: 1rem;
   width: 40%;
+  border: 2px solid #ffdbe5;
+  border-radius: 8px;
 }
 
 .flashcards {
@@ -80,18 +89,33 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.card:active {
   transform: scale(1.05);
+  background-color: #ffc4d8;
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
   .card {
     width: 100px;
     height: 80px;
     font-size: 1rem;
+  }
+
+  .word-pair {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .word-pair input {
+    width: 80%;
   }
 }
