@@ -43,5 +43,11 @@ wordList.forEach(([az, en]) => {
       <div class="card-back">${en}</div>
     </div>
   `;
+
+  // Add click/tap support for mobile
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
+
   container.appendChild(card);
 });
