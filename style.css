@@ -56,6 +56,7 @@ header h1 {
   transition: transform 0.8s;
 }
 
+.card.flipped .card-inner,
 .card:hover .card-inner {
   transform: rotateY(180deg);
 }
