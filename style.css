@@ -18,12 +18,7 @@ header {
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-}
-
-header h1 {
-  color: #ff69b4;
-  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
 .ferid-photo {
@@ -34,6 +29,42 @@ header h1 {
   margin: 20px 0;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.word-inputs {
+  margin-bottom: 40px;
+}
+
+.word-pair {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.word-pair input {
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.generate-btn {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.generate-btn:hover {
+  background-color: #ff1493;
 }
 
 #flashcards-container {
