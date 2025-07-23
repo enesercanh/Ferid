@@ -1,41 +1,56 @@
-// Create 31 empty word input rows
-const inputContainer = document.getElementById("inputs-container");
+function createInputFields() {
+  const count = parseInt(document.getElementById('wordCount').value);
+  const inputDiv = document.getElementById('wordInputs');
+  const buttonDiv = document.getElementById('buttons');
+  inputDiv.innerHTML = '';
+  buttonDiv.innerHTML = '';
 
-for (let i = 1; i <= 31; i++) {
-  const row = document.createElement("div");
-  row.className = "word-pair";
-  row.innerHTML = `
-    <input type="text" placeholder="Azerbaijani #${i}" class="az-input" />
-    <input type="text" placeholder="English #${i}" class="en-input" />
-  `;
-  inputContainer.appendChild(row);
+  if (isNaN(count) || count < 1) return;
+
+  for (let i = 0; i < count; i++) {
+    const pair = document.createElement('div');
+    pair.className = 'word-pair';
+    pair.innerHTML = `
+      <input type="text" placeholder="Azərbaycan dili" />
+      <input type="text" placeholder="İngilis dili" />
+    `;
+    inputDiv.appendChild(pair);
+  }
+
+  const generateBtn = document.createElement('button');
+  generateBtn.textContent = "Flashkartları Yarat";
+  generateBtn.onclick = generateFlashcards;
+
+  const resetBtn = document.createElement('button');
+  resetBtn.textContent = "Yenidən Başla";
+  resetBtn.onclick = () => location.reload();
+
+  buttonDiv.appendChild(generateBtn);
+  buttonDiv.appendChild(resetBtn);
 }
 
-// When teacher clicks Generate
-function generateCards() {
-  const azWords = document.querySelectorAll(".az-input");
-  const enWords = document.querySelectorAll(".en-input");
-  const container = document.getElementById("flashcards-container");
+function generateFlashcards() {
+  const inputPairs = document.querySelectorAll('.word-pair');
+  const flashcardDiv = document.getElementById('flashcards');
+  flashcardDiv.innerHTML = '';
 
-  container.innerHTML = ""; // Clear previous cards
-
-  for (let i = 0; i < azWords.length; i++) {
-    const az = azWords[i].value.trim();
-    const en = enWords[i].value.trim();
+  inputPairs.forEach(pair => {
+    const az = pair.children[0].value.trim();
+    const en = pair.children[1].value.trim();
 
     if (az && en) {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <div class="card-inner">
-          <div class="card-front">${az}</div>
-          <div class="card-back">${en}</div>
-        </div>
-      `;
-      card.addEventListener("click", () => {
-        card.classList.toggle("flipped");
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.textContent = az;
+      card.dataset.en = en;
+
+      card.addEventListener('click', function () {
+        const tmp = this.textContent;
+        this.textContent = this.dataset.en;
+        this.dataset.en = tmp;
       });
-      container.appendChild(card);
+
+      flashcardDiv.appendChild(card);
     }
-  }
+  });
 }
