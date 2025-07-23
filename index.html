@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ferid's Flashcard Builder ✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards for Feridosh</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>🧠 Build Flashcards for Ferid!</h1>
-      <img src="ferid.jpeg" alt="Ferid's Photo" class="ferid-photo" />
-      <p>Type the Azerbaijani and English words below to create your own learning cards.</p>
-    </header>
+    <img src="ferid.jpeg" alt="Ferid" class="ferid-photo">
+    <h1>Feridosh's flashcards ✨</h1>
 
-    <section class="word-inputs">
-      <div id="inputs-container"></div>
-      <button onclick="generateCards()" class="generate-btn">Generate Flashcards</button>
-    </section>
+    <div id="setup" class="setup">
+      <label for="wordCount">How many words do you want to put teacher Sahane?</label>
+      <input type="number" id="wordCount" min="1" max="100" />
+      <button onclick="createInputFields()">Başla</button>
+    </div>
 
-    <main id="flashcards-container"></main>
-
-    <footer>
-      <p>Go go, teacher Sahane! 👩‍🏫👨‍🏫</p>
-    </footer>
+    <div id="wordInputs"></div>
+    <div id="buttons"></div>
+    <div id="flashcards" class="flashcards"></div>
   </div>
 
   <script src="script.js"></script>
